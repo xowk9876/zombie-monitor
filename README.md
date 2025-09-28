@@ -85,9 +85,11 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 ## ✨ 주요 기능
 
-<table>
+<div align="center">
+
+<table style="width: 80%; margin: 0 auto; border-collapse: separate; border-spacing: 0;">
 <tr>
-<td width="50%" style="padding: 15px; vertical-align: top;">
+<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
 
 **🎯 실시간 모니터링**
 - ⚡ 2초 간격 자동 새로고침
@@ -96,7 +98,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - ⌨️ 안정적인 키 입력
 
 </td>
-<td width="50%" style="padding: 15px; vertical-align: top;">
+<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
 
 **🤖 자동 정리**
 - 🚀 감지 즉시 정리
@@ -107,7 +109,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 </td>
 </tr>
 <tr>
-<td width="50%" style="padding: 15px; vertical-align: top;">
+<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
 
 **📊 통계 및 로깅**
 - 📈 정확한 세션 통계
@@ -116,7 +118,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - 🔄 로그 로테이션
 
 </td>
-<td width="50%" style="padding: 15px; vertical-align: top;">
+<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
 
 **🎮 인터랙티브 제어**
 - ⌨️ 단축키 지원
@@ -127,6 +129,8 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 </td>
 </tr>
 </table>
+
+</div>
 
 ### 🔥 7단계 정리 과정
 
