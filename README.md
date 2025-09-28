@@ -85,66 +85,119 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 ## ✨ 주요 기능
 
-<div align="center">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0;">
 
-<table style="width: 90%; margin: 0 auto; border-collapse: separate; border-spacing: 15px;">
-<tr>
-<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 30px; box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3); color: white; transition: transform 0.3s ease;">
 
-<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-**🎯 실시간 모니터링**
-</div>
-<div style="text-align: left; line-height: 1.8;">
-- ⚡ 2초 간격 자동 새로고침
-- 🎨 시각적 상태 표시
-- 💻 시스템 정보 표시
-- ⌨️ 안정적인 키 입력
+<div style="text-align: center; margin-bottom: 25px;">
+<div style="font-size: 2.5em; margin-bottom: 10px;">🎯</div>
+<h3 style="margin: 0; font-size: 1.4em; font-weight: bold;">실시간 모니터링</h3>
 </div>
 
-</td>
-<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
-
-<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-**🤖 자동 정리**
+<div style="line-height: 2.2; font-size: 0.95em;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">⚡</span>
+<span>2초 간격 자동 새로고침</span>
 </div>
-<div style="text-align: left; line-height: 1.8;">
-- 🚀 감지 즉시 정리
-- 🔥 7단계 정리 과정
-- 🛡️ 시스템 레벨 처리
-- 🧠 스마트 정리
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">🎨</span>
+<span>시각적 상태 표시</span>
 </div>
-
-</td>
-</tr>
-<tr>
-<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
-
-<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-**📊 통계 및 로깅**
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">💻</span>
+<span>시스템 정보 표시</span>
 </div>
-<div style="text-align: left; line-height: 1.8;">
-- 📈 정확한 세션 통계
-- 🔢 실시간 성공률 계산
-- 📝 상세 로깅
-- 🔄 로그 로테이션
+<div style="display: flex; align-items: center;">
+<span style="margin-right: 12px; font-size: 1.2em;">⌨️</span>
+<span>안정적인 키 입력</span>
+</div>
 </div>
 
-</td>
-<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
-
-<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-**🎮 인터랙티브 제어**
-</div>
-<div style="text-align: left; line-height: 1.8;">
-- ⌨️ 단축키 지원
-- 🎯 논블로킹 키 입력
-- ❓ 도움말 시스템
-- 🛡️ 터미널 안전성
 </div>
 
-</td>
-</tr>
-</table>
+<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 20px; padding: 30px; box-shadow: 0 15px 35px rgba(240, 147, 251, 0.3); color: white; transition: transform 0.3s ease;">
+
+<div style="text-align: center; margin-bottom: 25px;">
+<div style="font-size: 2.5em; margin-bottom: 10px;">🤖</div>
+<h3 style="margin: 0; font-size: 1.4em; font-weight: bold;">자동 정리</h3>
+</div>
+
+<div style="line-height: 2.2; font-size: 0.95em;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">🚀</span>
+<span>감지 즉시 정리</span>
+</div>
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">🔥</span>
+<span>7단계 정리 과정</span>
+</div>
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">🛡️</span>
+<span>시스템 레벨 처리</span>
+</div>
+<div style="display: flex; align-items: center;">
+<span style="margin-right: 12px; font-size: 1.2em;">🧠</span>
+<span>스마트 정리</span>
+</div>
+</div>
+
+</div>
+
+<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 20px; padding: 30px; box-shadow: 0 15px 35px rgba(79, 172, 254, 0.3); color: white; transition: transform 0.3s ease;">
+
+<div style="text-align: center; margin-bottom: 25px;">
+<div style="font-size: 2.5em; margin-bottom: 10px;">📊</div>
+<h3 style="margin: 0; font-size: 1.4em; font-weight: bold;">통계 및 로깅</h3>
+</div>
+
+<div style="line-height: 2.2; font-size: 0.95em;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">📈</span>
+<span>정확한 세션 통계</span>
+</div>
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">🔢</span>
+<span>실시간 성공률 계산</span>
+</div>
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">📝</span>
+<span>상세 로깅</span>
+</div>
+<div style="display: flex; align-items: center;">
+<span style="margin-right: 12px; font-size: 1.2em;">🔄</span>
+<span>로그 로테이션</span>
+</div>
+</div>
+
+</div>
+
+<div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 20px; padding: 30px; box-shadow: 0 15px 35px rgba(67, 233, 123, 0.3); color: white; transition: transform 0.3s ease;">
+
+<div style="text-align: center; margin-bottom: 25px;">
+<div style="font-size: 2.5em; margin-bottom: 10px;">🎮</div>
+<h3 style="margin: 0; font-size: 1.4em; font-weight: bold;">인터랙티브 제어</h3>
+</div>
+
+<div style="line-height: 2.2; font-size: 0.95em;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">⌨️</span>
+<span>단축키 지원</span>
+</div>
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">🎯</span>
+<span>논블로킹 키 입력</span>
+</div>
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<span style="margin-right: 12px; font-size: 1.2em;">❓</span>
+<span>도움말 시스템</span>
+</div>
+<div style="display: flex; align-items: center;">
+<span style="margin-right: 12px; font-size: 1.2em;">🛡️</span>
+<span>터미널 안전성</span>
+</div>
+</div>
+
+</div>
 
 </div>
 
