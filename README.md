@@ -87,44 +87,60 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 <div align="center">
 
-<table style="width: 80%; margin: 0 auto; border-collapse: separate; border-spacing: 0;">
+<table style="width: 90%; margin: 0 auto; border-collapse: separate; border-spacing: 15px;">
 <tr>
-<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
+<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
 
+<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
 **🎯 실시간 모니터링**
+</div>
+<div style="text-align: left; line-height: 1.8;">
 - ⚡ 2초 간격 자동 새로고침
 - 🎨 시각적 상태 표시
 - 💻 시스템 정보 표시
 - ⌨️ 안정적인 키 입력
+</div>
 
 </td>
-<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
+<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
 
+<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
 **🤖 자동 정리**
+</div>
+<div style="text-align: left; line-height: 1.8;">
 - 🚀 감지 즉시 정리
 - 🔥 7단계 정리 과정
 - 🛡️ 시스템 레벨 처리
 - 🧠 스마트 정리
+</div>
 
 </td>
 </tr>
 <tr>
-<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
+<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
 
+<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
 **📊 통계 및 로깅**
+</div>
+<div style="text-align: left; line-height: 1.8;">
 - 📈 정확한 세션 통계
 - 🔢 실시간 성공률 계산
 - 📝 상세 로깅
 - 🔄 로그 로테이션
+</div>
 
 </td>
-<td width="50%" style="padding: 20px; vertical-align: top; text-align: center; height: 200px;">
+<td width="50%" style="padding: 25px; vertical-align: top; text-align: center; height: 220px;">
 
+<div style="height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
 **🎮 인터랙티브 제어**
+</div>
+<div style="text-align: left; line-height: 1.8;">
 - ⌨️ 단축키 지원
 - 🎯 논블로킹 키 입력
 - ❓ 도움말 시스템
 - 🛡️ 터미널 안전성
+</div>
 
 </td>
 </tr>
