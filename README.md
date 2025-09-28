@@ -101,12 +101,12 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 <td width="50%" style="padding: 50px 60px; vertical-align: top; text-align: left; line-height: 1.8; border: 1px solid #e1e5e9; border-radius: 8px; margin: 10px; background-color: #f8f9fa;">
 
 ### 🤖 자동 정리
-- 🚀 **감지 즉시 정리**
-- 🔥 **7단계 정리 과정**
-- 🛡️ **시스템 레벨 좀비 처리**
-- 🧠 **스마트 정리** (단계별 자동 진행)
-- ⚡ **즉시 반응**
-- 🔄 **자동 재시도**
+- 🚀 **감지 즉시 정리** (좀비 프로세스 발견 시 즉시 처리)
+- 🔥 **7단계 정리 과정** (안전한 단계별 정리 시스템)
+- 🛡️ **시스템 레벨 좀비 처리** (커널 레벨까지 강력한 정리)
+- 🧠 **스마트 정리** (단계별 자동 진행 및 지능형 판단)
+- ⚡ **즉시 반응** (실시간 감지 및 즉시 대응)
+- 🔄 **자동 재시도** (실패 시 자동으로 재시도)
 
 </td>
 </tr>
@@ -125,12 +125,12 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 <td width="50%" style="padding: 50px 60px; vertical-align: top; text-align: left; line-height: 1.8; border: 1px solid #e1e5e9; border-radius: 8px; margin: 10px; background-color: #f8f9fa;">
 
 ### 🎮 인터랙티브 제어
-- ⌨️ **단축키 지원** ([A][M][S][Q][H])
-- 🎯 **논블로킹 키 입력**
-- ❓ **도움말 시스템**
-- 📊 **실시간 통계**
-- 🛡️ **터미널 안전성**
-- 🔧 **터미널 설정 자동 복원**
+- ⌨️ **단축키 지원** ([A][M][S][Q][H] 키로 빠른 조작)
+- 🎯 **논블로킹 키 입력** (모니터링 중단 없이 키 입력)
+- ❓ **도움말 시스템** (내장된 상세한 도움말 가이드)
+- 📊 **실시간 통계** (현재 세션의 상세한 통계 정보)
+- 🛡️ **터미널 안전성** (안전한 터미널 환경 보장)
+- 🔧 **터미널 설정 자동 복원** (종료 시 원래 설정으로 복원)
 
 </td>
 </tr>
