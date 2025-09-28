@@ -85,156 +85,48 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 ## ✨ 주요 기능
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 24px; padding: 40px; margin: 40px 0; position: relative; overflow: hidden;">
+<table>
+<tr>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
-<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"grain\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"><circle cx=\"25\" cy=\"25\" r=\"1\" fill=\"white\" opacity=\"0.1\"/><circle cx=\"75\" cy=\"75\" r=\"1\" fill=\"white\" opacity=\"0.1\"/><circle cx=\"50\" cy=\"10\" r=\"0.5\" fill=\"white\" opacity=\"0.05\"/><circle cx=\"10\" cy=\"60\" r=\"0.5\" fill=\"white\" opacity=\"0.05\"/><circle cx=\"90\" cy=\"40\" r=\"0.5\" fill=\"white\" opacity=\"0.05\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grain)\"/></svg>'); opacity: 0.3;"></div>
+### 🎯 실시간 모니터링
+- **2초 간격 자동 새로고침** - 지속적인 시스템 감시
+- **시각적 상태 표시** - 직관적인 상태 정보 제공
+- **시스템 정보 표시** - 로드 평균, 메모리 사용률 등
+- **안정적인 키 입력** - 논블로킹 키보드 처리
 
-<div style="position: relative; z-index: 2;">
+</td>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
-<div style="text-align: center; margin-bottom: 40px;">
-<h2 style="color: white; font-size: 2.5em; margin: 0; font-weight: 700; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">🚀 핵심 기능</h2>
-<p style="color: rgba(255,255,255,0.9); font-size: 1.1em; margin: 16px 0 0 0; font-weight: 300;">강력하고 스마트한 좀비 프로세스 관리 시스템</p>
-</div>
+### 🤖 자동 정리
+- **감지 즉시 정리** - 좀비 프로세스 발견 시 즉시 처리
+- **7단계 정리 과정** - 체계적인 정리 프로세스
+- **시스템 레벨 처리** - PPID 0.0 좀비도 처리 가능
+- **스마트 정리** - 안전하고 효율적인 정리
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+</td>
+</tr>
+<tr>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
-<div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 28px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
+### 📊 통계 및 로깅
+- **정확한 세션 통계** - 감지/정리된 좀비 수 추적
+- **실시간 성공률 계산** - 정리 성공률 실시간 표시
+- **상세 로깅** - 모든 활동을 로그로 기록
+- **로그 로테이션** - 자동 로그 파일 관리
 
-<div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #00d4ff, #00a8ff);"></div>
+</td>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
-<div style="text-align: center; margin-bottom: 24px;">
-<div style="width: 72px; height: 72px; background: linear-gradient(135deg, #00d4ff, #00a8ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4); transform: rotate(-5deg);">
-<span style="font-size: 28px;">🎯</span>
-</div>
-<h3 style="margin: 0; font-size: 1.4em; font-weight: 700; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">실시간 모니터링</h3>
-<p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.8); font-size: 0.9em; font-weight: 300;">라이브 시스템 감시</p>
-</div>
+### 🎮 인터랙티브 제어
+- **단축키 지원** - [A]자동정리, [M]수동정리, [S]통계, [Q]종료
+- **논블로킹 키 입력** - 모니터링 중에도 키 입력 가능
+- **도움말 시스템** - [H]키로 도움말 표시
+- **터미널 안전성** - 안전한 종료 및 재시작
 
-<div style="space-y: 12px;">
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #00d4ff; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">2초 간격 자동 새로고침</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #00d4ff; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">시각적 상태 표시</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #00d4ff; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">시스템 정보 표시</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0;">
-<div style="width: 8px; height: 8px; background: #00d4ff; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">안정적인 키 입력</span>
-</div>
-</div>
-
-</div>
-
-<div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 28px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
-
-<div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ff6b6b, #ff8e8e);"></div>
-
-<div style="text-align: center; margin-bottom: 24px;">
-<div style="width: 72px; height: 72px; background: linear-gradient(135deg, #ff6b6b, #ff8e8e); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4); transform: rotate(5deg);">
-<span style="font-size: 28px;">🤖</span>
-</div>
-<h3 style="margin: 0; font-size: 1.4em; font-weight: 700; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">자동 정리</h3>
-<p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.8); font-size: 0.9em; font-weight: 300;">스마트 자동화 시스템</p>
-</div>
-
-<div style="space-y: 12px;">
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #ff6b6b; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">감지 즉시 정리</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #ff6b6b; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">7단계 정리 과정</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #ff6b6b; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">시스템 레벨 처리</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0;">
-<div style="width: 8px; height: 8px; background: #ff6b6b; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">스마트 정리</span>
-</div>
-</div>
-
-</div>
-
-<div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 28px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
-
-<div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #4ecdc4, #44a08d);"></div>
-
-<div style="text-align: center; margin-bottom: 24px;">
-<div style="width: 72px; height: 72px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4); transform: rotate(-3deg);">
-<span style="font-size: 28px;">📊</span>
-</div>
-<h3 style="margin: 0; font-size: 1.4em; font-weight: 700; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">통계 및 로깅</h3>
-<p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.8); font-size: 0.9em; font-weight: 300;">데이터 분석 & 추적</p>
-</div>
-
-<div style="space-y: 12px;">
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #4ecdc4; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">정확한 세션 통계</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #4ecdc4; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">실시간 성공률 계산</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #4ecdc4; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">상세 로깅</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0;">
-<div style="width: 8px; height: 8px; background: #4ecdc4; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">로그 로테이션</span>
-</div>
-</div>
-
-</div>
-
-<div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 28px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
-
-<div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #a8edea, #fed6e3);"></div>
-
-<div style="text-align: center; margin-bottom: 24px;">
-<div style="width: 72px; height: 72px; background: linear-gradient(135deg, #a8edea, #fed6e3); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 25px rgba(168, 237, 234, 0.4); transform: rotate(3deg);">
-<span style="font-size: 28px;">🎮</span>
-</div>
-<h3 style="margin: 0; font-size: 1.4em; font-weight: 700; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">인터랙티브 제어</h3>
-<p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.8); font-size: 0.9em; font-weight: 300;">직관적 사용자 경험</p>
-</div>
-
-<div style="space-y: 12px;">
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #a8edea; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(168, 237, 234, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">단축키 지원</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #a8edea; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(168, 237, 234, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">논블로킹 키 입력</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<div style="width: 8px; height: 8px; background: #a8edea; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(168, 237, 234, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">도움말 시스템</span>
-</div>
-<div style="display: flex; align-items: center; padding: 10px 0;">
-<div style="width: 8px; height: 8px; background: #a8edea; border-radius: 50%; margin-right: 16px; flex-shrink: 0; box-shadow: 0 0 8px rgba(168, 237, 234, 0.6);"></div>
-<span style="color: rgba(255,255,255,0.9); font-size: 0.95em; font-weight: 500;">터미널 안전성</span>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</td>
+</tr>
+</table>
 
 ### 🔥 7단계 정리 과정
 
