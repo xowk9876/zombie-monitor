@@ -85,89 +85,56 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 ## ✨ 주요 기능
 
-<div align="center">
+<table>
+<tr>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 🎯 실시간 모니터링
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: white;">
+- ⚡ **2초 간격 자동 새로고침**
+- 🎨 **시각적 상태 표시** (정상/주의/위험)
+- 💻 **시스템 정보** (로드 평균, 메모리 사용률)
+- 📋 **상세 정보** (PID, PPID, 명령어)
+- ⌨️ **안정적인 키 입력**
+- 🔧 **터미널 설정 자동 복원**
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left;">
-
-<div>
-- ⚡ **2초 간격 자동 새로고침**  
-- 🎨 **시각적 상태 표시** (정상/주의/위험)  
-- 💻 **시스템 정보** (로드 평균, 메모리 사용률)  
-</div>
-
-<div>
-- 📋 **상세 정보** (PID, PPID, 명령어)  
-- ⌨️ **안정적인 키 입력**  
-- 🔧 **터미널 설정 자동 복원**  
-</div>
-
-</div>
-</div>
+</td>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 🤖 자동 정리
-<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: white;">
+- 🚀 **감지 즉시 정리** (좀비 프로세스 발견 시 즉시 처리)
+- 🔥 **7단계 정리 과정** (안전한 단계별 정리 시스템)
+- 🛡️ **시스템 레벨 좀비 처리** (커널 레벨까지 강력한 정리)
+- 🧠 **스마트 정리** (단계별 자동 진행 및 지능형 판단)
+- ⚡ **즉시 반응** (실시간 감지 및 즉시 대응)
+- 🔄 **자동 재시도** (실패 시 자동으로 재시도)
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left;">
-
-<div>
-- 🚀 **감지 즉시 정리** (좀비 프로세스 발견 시 즉시 처리)  
-- 🔥 **7단계 정리 과정** (안전한 단계별 정리 시스템)  
-- 🛡️ **시스템 레벨 좀비 처리** (커널 레벨까지 강력한 정리)  
-</div>
-
-<div>
-- 🧠 **스마트 정리** (단계별 자동 진행 및 지능형 판단)  
-- ⚡ **즉시 반응** (실시간 감지 및 즉시 대응)  
-- 🔄 **자동 재시도** (실패 시 자동으로 재시도)  
-</div>
-
-</div>
-</div>
+</td>
+</tr>
+<tr>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 📊 통계 및 로깅
-<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 30px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: white;">
+- 📈 **정확한 세션 통계**
+- 🔢 **실시간 성공률 계산**
+- 📝 **상세 로깅**
+- 🔄 **로그 로테이션** (7일간 보관)
+- 📊 **실시간 통계 화면**
+- 📋 **상세 정보** (PID, PPID, 명령어)
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left;">
-
-<div>
-- 📈 **정확한 세션 통계**  
-- 🔢 **실시간 성공률 계산**  
-- 📝 **상세 로깅**  
-</div>
-
-<div>
-- 🔄 **로그 로테이션** (7일간 보관)  
-- 📊 **실시간 통계 화면**  
-- 📋 **상세 정보** (PID, PPID, 명령어)  
-</div>
-
-</div>
-</div>
+</td>
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 🎮 인터랙티브 제어
-<div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 30px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: white;">
+- ⌨️ **단축키 지원** ([A][M][S][Q][H] 키로 빠른 조작)
+- 🎯 **논블로킹 키 입력** (모니터링 중단 없이 키 입력)
+- ❓ **도움말 시스템** (내장된 상세한 도움말 가이드)
+- 📊 **실시간 통계** (현재 세션의 상세한 통계 정보)
+- 🛡️ **터미널 안전성** (안전한 터미널 환경 보장)
+- 🔧 **터미널 설정 자동 복원** (종료 시 원래 설정으로 복원)
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left;">
-
-<div>
-- ⌨️ **단축키 지원** ([A][M][S][Q][H] 키로 빠른 조작)  
-- 🎯 **논블로킹 키 입력** (모니터링 중단 없이 키 입력)  
-- ❓ **도움말 시스템** (내장된 상세한 도움말 가이드)  
-</div>
-
-<div>
-- 📊 **실시간 통계** (현재 세션의 상세한 통계 정보)  
-- 🛡️ **터미널 안전성** (안전한 터미널 환경 보장)  
-- 🔧 **터미널 설정 자동 복원** (종료 시 원래 설정으로 복원)  
-</div>
-
-</div>
-</div>
-
-</div>
+</td>
+</tr>
+</table>
 
 ### 🔥 7단계 정리 과정
 
