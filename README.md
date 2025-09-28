@@ -92,7 +92,6 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - 📋 **상세 정보** (PID, PPID, 명령어)
 - ⌨️ **안정적인 키 입력**
 - 🔧 **터미널 설정 자동 복원**
-- 📊 **실시간 통계 화면**
 
 </td>
 <td width="50%">
