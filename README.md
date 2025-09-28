@@ -81,9 +81,9 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 ## ✨ 주요 기능
 
-<table>
+<table width="100%" style="table-layout: fixed; width: 100%;">
 <tr>
-<td width="50%">
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 🎯 실시간 모니터링
 - ⚡ **2초 간격 자동 새로고침**
@@ -94,7 +94,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - 🔧 **터미널 설정 자동 복원**
 
 </td>
-<td width="50%">
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 🤖 자동 정리
 - 🚀 **감지 즉시 정리**
@@ -107,7 +107,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 </td>
 </tr>
 <tr>
-<td width="50%">
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 📊 통계 및 로깅
 - 📈 **정확한 세션 통계**
@@ -118,7 +118,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - 📋 **상세 정보** (PID, PPID, 명령어)
 
 </td>
-<td width="50%">
+<td width="50%" style="padding: 20px; vertical-align: top;">
 
 ### 🎮 인터랙티브 제어
 - ⌨️ **단축키 지원** ([A][M][S][Q][H])
