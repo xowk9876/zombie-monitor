@@ -85,9 +85,9 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 
 ## ✨ 주요 기능
 
-<table width="100%" style="table-layout: fixed; width: 100%; margin: 0 auto;">
+<table width="100%" style="table-layout: fixed; width: 100%; margin: 20px auto; border-spacing: 15px; border-collapse: separate; padding: 20px;">
 <tr>
-<td width="50%" style="padding: 30px 40px; vertical-align: top; text-align: left; line-height: 1.6;">
+<td width="50%" style="padding: 50px 60px; vertical-align: top; text-align: left; line-height: 1.8; border: 1px solid #e1e5e9; border-radius: 8px; margin: 10px; background-color: #f8f9fa;">
 
 ### 🎯 실시간 모니터링
 - ⚡ **2초 간격 자동 새로고침**
@@ -98,7 +98,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - 🔧 **터미널 설정 자동 복원**
 
 </td>
-<td width="50%" style="padding: 30px 40px; vertical-align: top; text-align: left; line-height: 1.6;">
+<td width="50%" style="padding: 50px 60px; vertical-align: top; text-align: left; line-height: 1.8; border: 1px solid #e1e5e9; border-radius: 8px; margin: 10px; background-color: #f8f9fa;">
 
 ### 🤖 자동 정리
 - 🚀 **감지 즉시 정리**
@@ -111,7 +111,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 </td>
 </tr>
 <tr>
-<td width="50%" style="padding: 30px 40px; vertical-align: top; text-align: left; line-height: 1.6;">
+<td width="50%" style="padding: 50px 60px; vertical-align: top; text-align: left; line-height: 1.8; border: 1px solid #e1e5e9; border-radius: 8px; margin: 10px; background-color: #f8f9fa;">
 
 ### 📊 통계 및 로깅
 - 📈 **정확한 세션 통계**
@@ -122,7 +122,7 @@ sudo /opt/zombie_monitor/zombie_monitor.sh
 - 📋 **상세 정보** (PID, PPID, 명령어)
 
 </td>
-<td width="50%" style="padding: 30px 40px; vertical-align: top; text-align: left; line-height: 1.6;">
+<td width="50%" style="padding: 50px 60px; vertical-align: top; text-align: left; line-height: 1.8; border: 1px solid #e1e5e9; border-radius: 8px; margin: 10px; background-color: #f8f9fa;">
 
 ### 🎮 인터랙티브 제어
 - ⌨️ **단축키 지원** ([A][M][S][Q][H])
