@@ -430,8 +430,7 @@ zombie-monitor/
 ├── 🧟 zombie_monitor.sh           # 실시간 모니터링 스크립트
 ├── ⚙️ zombie_monitor.conf         # 설정 파일
 ├── 🚀 setup_zombie_monitor.sh     # 설치 스크립트
-├── 🗑️ uninstall_zombie_monitor.sh # 제거 스크립트
-└── 🧪 create_test_zombies.sh      # 테스트용 좀비 생성 스크립트
+└── 🗑️ uninstall_zombie_monitor.sh # 제거 스크립트
 ```
 
 ### 📋 각 파일의 역할
@@ -442,7 +441,6 @@ zombie-monitor/
 | **`zombie_monitor.conf`** | ⚙️ 설정 파일 | 모니터링 설정 (CRLF 문제 해결) |
 | **`setup_zombie_monitor.sh`** | 🚀 설치 스크립트 | 시스템에 자동 설치 및 설정 (자동 시작 비활성화) |
 | **`uninstall_zombie_monitor.sh`** | 🗑️ 제거 스크립트 | 타임아웃 기능이 있는 완전 제거 스크립트 |
-| **`create_test_zombies.sh`** | 🧪 테스트 스크립트 | 테스트용 좀비 프로세스 생성 |
 | **`README.md`** | 📖 문서 | 최적화된 기능 설명, 사용법, 문제 해결 가이드 |
 
 ## 📄 라이선스
