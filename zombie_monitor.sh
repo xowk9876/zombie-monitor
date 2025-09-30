@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Rocky Linux 8/9 Zombie Process Monitor
-# 작성자: Tae-system
-# 용도: 실시간 좀비 프로세스 모니터링 및 자동 정리
+# Rocky Linux Zombie Process Monitor v1.1
+# 실시간 좀비 프로세스 모니터링 및 자동 정리
+# 작성자: Tae-system, 업데이트: 2025-01-27
 
 # 색상 정의
 RED='\033[0;31m'
@@ -19,23 +19,44 @@ LOCK_FILE="/tmp/zombie_monitor.lock"
 CONFIG_FILE="/etc/zombie_monitor.conf"
 
 # 기본 설정
+VERSION="1.1"
 REFRESH_INTERVAL=2
 AUTO_CLEANUP=true
 VERBOSE=false
 MAX_ZOMBIES=5
 CLEANUP_DELAY=1
+DAEMON_MODE=false
+LOG_ROTATION_SIZE=10485760  # 10MB
 
 # 통계 변수
 TOTAL_DETECTED=0
 TOTAL_CLEANED=0
+TOTAL_FAILED=0
 SESSION_START=$(date '+%Y-%m-%d %H:%M:%S')
+START_TIME=$(date +%s)
 
 # 로그 함수
 log_message() {
     local level=$1
     local message=$2
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    
+    # 로그 파일 크기 체크 및 로테이션
+    if [ -f "$LOG_FILE" ] && [ $(stat -f%z "$LOG_FILE" 2>/dev/null || stat -c%s "$LOG_FILE" 2>/dev/null || echo 0) -gt $LOG_ROTATION_SIZE ]; then
+        rotate_log
+    fi
+    
     echo "[$timestamp] [$level] $message" >> "$LOG_FILE"
+}
+
+# 로그 로테이션 함수
+rotate_log() {
+    if [ -f "$LOG_FILE" ]; then
+        mv "$LOG_FILE" "${LOG_FILE}.old" 2>/dev/null
+        touch "$LOG_FILE"
+        chmod 644 "$LOG_FILE" 2>/dev/null
+        log_message "INFO" "Log rotated - file size exceeded ${LOG_ROTATION_SIZE} bytes"
+    fi
 }
 
 # 색상 출력 함수
@@ -64,14 +85,16 @@ cleanup_lock() {
     rm -f "$LOCK_FILE"
 }
 
-# 좀비 프로세스 감지
+# 좀비 프로세스 감지 (최적화된 버전)
 detect_zombies() {
-    ps aux | awk '$8 ~ /^Z/ { print $2, $3, $11 }' 2>/dev/null
+    # ps 명령어 최적화 - 필요한 컬럼만 출력
+    ps -eo pid,ppid,stat,comm --no-headers 2>/dev/null | awk '$3 ~ /^Z/ { print $1, $2, $4 }'
 }
 
-# 좀비 프로세스 개수
+# 좀비 프로세스 개수 (최적화된 버전)
 count_zombies() {
-    ps aux | awk '$8 ~ /^Z/ { count++ } END { print count+0 }' 2>/dev/null
+    # 더 빠른 카운팅 방법
+    ps -eo stat --no-headers 2>/dev/null | grep -c '^Z' || echo 0
 }
 
 # 좀비 프로세스 정리
@@ -181,7 +204,7 @@ cleanup_zombie() {
         # 실패 시 무시하고 계속 진행
         print_color $YELLOW "⚠️ 좀비 $pid 정리 실패 - 무시하고 계속 진행"
         log_message "WARNING" "Zombie $pid cleanup failed, continuing"
-        # 실패 카운트는 증가시키지 않음
+        ((TOTAL_FAILED++))
         return
     fi
     
@@ -257,7 +280,7 @@ cleanup_zombie() {
     
     print_color $RED "❌ 좀비 프로세스 $pid 정리 실패"
     log_message "ERROR" "Failed to clean zombie $pid"
-    # 실패 시에도 카운트는 증가시키지 않음
+    ((TOTAL_FAILED++))
 }
 
 # 화면 클리어 및 헤더
@@ -318,10 +341,19 @@ show_status() {
     print_color $BLUE "📈 세션 통계:"
     print_color $BLUE "  감지된 좀비: $TOTAL_DETECTED개"
     print_color $BLUE "  정리된 좀비: $TOTAL_CLEANED개"
+    print_color $BLUE "  정리 실패: $TOTAL_FAILED개"
     if [ $TOTAL_DETECTED -gt 0 ]; then
         local success_rate=$((TOTAL_CLEANED * 100 / TOTAL_DETECTED))
         print_color $BLUE "  정리 성공률: ${success_rate}%"
     fi
+    
+    # 세션 시간 계산
+    local current_time=$(date +%s)
+    local session_duration=$((current_time - START_TIME))
+    local hours=$((session_duration / 3600))
+    local minutes=$(((session_duration % 3600) / 60))
+    local seconds=$((session_duration % 60))
+    print_color $BLUE "  세션 시간: ${hours}시간 ${minutes}분 ${seconds}초"
     print_color $BLUE "  세션 시작: $SESSION_START"
     echo
     
@@ -343,6 +375,15 @@ show_statistics() {
     print_color $BLUE "  현재 시간: $(date '+%Y-%m-%d %H:%M:%S')"
     print_color $BLUE "  감지된 좀비: $TOTAL_DETECTED개"
     print_color $BLUE "  정리된 좀비: $TOTAL_CLEANED개"
+    print_color $BLUE "  정리 실패: $TOTAL_FAILED개"
+    
+    # 세션 시간 계산
+    local current_time=$(date +%s)
+    local session_duration=$((current_time - START_TIME))
+    local hours=$((session_duration / 3600))
+    local minutes=$(((session_duration % 3600) / 60))
+    local seconds=$((session_duration % 60))
+    print_color $BLUE "  세션 시간: ${hours}시간 ${minutes}분 ${seconds}초"
     
     if [ $TOTAL_DETECTED -gt 0 ]; then
         local success_rate=$((TOTAL_CLEANED * 100 / TOTAL_DETECTED))
@@ -464,6 +505,7 @@ load_config() {
 
 # 사용법 출력
 usage() {
+    echo "🧟 Rocky Linux Zombie Process Monitor v$VERSION"
     echo "사용법: $0 [옵션]"
     echo ""
     echo "옵션:"
@@ -472,12 +514,15 @@ usage() {
     echo "  -i, --interval 간격 설정 (초, 기본값: 2)"
     echo "  -a, --auto     자동 정리 활성화 (기본값)"
     echo "  -m, --manual   자동 정리 비활성화"
+    echo "  -d, --daemon   백그라운드 데몬 모드"
+    echo "  --version      버전 정보 표시"
     echo ""
     echo "예시:"
     echo "  $0                    # 기본 모드"
     echo "  $0 -i 5              # 5초 간격"
     echo "  $0 -m                # 수동 모드"
     echo "  $0 -v -i 3           # 상세 출력, 3초 간격"
+    echo "  $0 -d                # 백그라운드 데몬 모드"
 }
 
 # 메인 함수
@@ -487,6 +532,12 @@ main() {
         case $1 in
             -h|--help)
                 usage
+                exit 0
+                ;;
+            --version)
+                echo "🧟 Rocky Linux Zombie Process Monitor v$VERSION"
+                echo "작성자: Tae-system"
+                echo "업데이트: 2025-01-27"
                 exit 0
                 ;;
             -v|--verbose)
@@ -503,6 +554,10 @@ main() {
                 ;;
             -m|--manual)
                 AUTO_CLEANUP=false
+                shift
+                ;;
+            -d|--daemon)
+                DAEMON_MODE=true
                 shift
                 ;;
             *)
@@ -526,16 +581,24 @@ main() {
     stty -echo -icanon time 0 min 0 2>/dev/null
     
     # 시작 로그
-    log_message "INFO" "Zombie monitor started (PID: $$, Interval: ${REFRESH_INTERVAL}s, Auto: $AUTO_CLEANUP)"
+    log_message "INFO" "Zombie monitor v$VERSION started (PID: $$, Interval: ${REFRESH_INTERVAL}s, Auto: $AUTO_CLEANUP, Daemon: $DAEMON_MODE)"
     
-    print_color $GREEN "🚀 Zombie Process Monitor 시작"
-    print_color $YELLOW "Ctrl+C로 종료하거나 Q키를 눌러주세요."
-    sleep 2
+    if [ "$DAEMON_MODE" = true ]; then
+        print_color $GREEN "🚀 Zombie Process Monitor v$VERSION 데몬 모드 시작"
+        print_color $YELLOW "백그라운드에서 실행 중... (PID: $$)"
+        log_message "INFO" "Running in daemon mode"
+    else
+        print_color $GREEN "🚀 Zombie Process Monitor v$VERSION 시작"
+        print_color $YELLOW "Ctrl+C로 종료하거나 Q키를 눌러주세요."
+        sleep 2
+    fi
     
     # 메인 루프
     while true; do
-        show_header
-        show_status
+        if [ "$DAEMON_MODE" != true ]; then
+            show_header
+            show_status
+        fi
         
         # 자동 정리 실행
         if [ "$AUTO_CLEANUP" = true ]; then
@@ -559,10 +622,12 @@ main() {
             fi
         fi
         
-        # 키 입력 확인 (논블로킹)
-        key=$(dd bs=1 count=1 2>/dev/null)
-        if [ -n "$key" ]; then
-            handle_key_input "$key"
+        # 키 입력 확인 (논블로킹) - 데몬 모드가 아닐 때만
+        if [ "$DAEMON_MODE" != true ]; then
+            key=$(dd bs=1 count=1 2>/dev/null)
+            if [ -n "$key" ]; then
+                handle_key_input "$key"
+            fi
         fi
         
         sleep "$REFRESH_INTERVAL"

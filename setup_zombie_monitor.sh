@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Rocky Linux Zombie Monitor 설치 스크립트
+# 실시간 좀비 프로세스 모니터링 시스템 설치
 # 작성자: Tae-system
-# 용도: 실시간 좀비 프로세스 모니터링 시스템 설치
 
 # 색상 정의
 RED='\033[0;31m'

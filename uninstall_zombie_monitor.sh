@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Rocky Linux Zombie Monitor 제거 스크립트
+# 설치된 zombie monitor 시스템 완전 제거
 # 작성자: Tae-system
-# 용도: 설치된 zombie monitor 시스템 완전 제거
 
 # 색상 정의
 RED='\033[0;31m'

@@ -1,24 +1,15 @@
-<div align="center">
-
 # 🧟 Rocky Linux Zombie Process Monitor
 
-</div>
+**실시간 좀비 프로세스 모니터링 및 자동 정리 시스템**
 
-<div align="center">
+Rocky Linux 8/9에서 좀비 프로세스를 실시간으로 모니터링하고 자동으로 정리하는 시스템입니다.
 
-![Zombie Monitor](https://img.shields.io/badge/Zombie-Monitor-red?style=for-the-badge&logo=linux)
-![Rocky Linux](https://img.shields.io/badge/Rocky_Linux-8%2F9-blue?style=for-the-badge&logo=redhat)
-![Bash](https://img.shields.io/badge/Bash-Script-green?style=for-the-badge&logo=gnu-bash)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
-**🚀 실시간 좀비 프로세스 모니터링 및 자동 정리 시스템**
-
-*Rocky Linux 8/9에서 좀비 프로세스를 실시간으로 모니터링하고 자동으로 정리하는 최적화된 시스템*
-
-[![GitHub stars](https://img.shields.io/github/stars/xowk9876/zombie-monitor?style=social)](https://github.com/xowk9876/zombie-monitor)
-[![GitHub forks](https://img.shields.io/github/forks/xowk9876/zombie-monitor?style=social)](https://github.com/xowk9876/zombie-monitor)
-
-</div>
+## 주요 특징
+- 🎯 **7단계 체계적 정리**: 체계적인 좀비 프로세스 정리 과정
+- 🔄 **실시간 모니터링**: 2초마다 자동 새로고침
+- 🤖 **완전 자동화**: 수동 개입 없이 자동 정리
+- 📊 **상세한 로깅**: 모든 활동 추적 및 통계 제공
+- 🛡️ **안전한 설계**: 시스템 안정성 고려
 
 ---
 
@@ -32,101 +23,65 @@
 - [🗑️ 완전 제거](#️-완전-제거)
 - [🛠️ 문제 해결](#️-문제-해결)
 - [📁 파일 구조](#-파일-구조)
-- [📄 라이선스](#-라이선스)
+- [🤝 기여하기](#-기여하기)
 - [🆘 지원](#-지원)
 
 
-## 🚀 Quick Start
+## 설치 및 실행
 
-### 📋 사전 준비 (Rocky Linux 8/9)
+### 사전 준비 (Rocky Linux 8/9)
 
 ```bash
-# 1️⃣ 필수 패키지 설치
+# 필수 패키지 설치
 sudo yum update -y
 sudo yum install -y git dos2unix
 
-# 2️⃣ 저장소 클론
-git clone https://github.com/xowk9876/zombie-monitor.git
-cd zombie-monitor
-
-# 3️⃣ 파일 권한 설정
+# 파일 권한 설정
 sudo chmod +x *.sh
 sudo chown root:root *.sh *.conf
 
-# 4️⃣ CRLF 문제 해결 (필요시)
+# CRLF 문제 해결 (필요시)
 dos2unix *.sh *.conf
 ```
 
-### 📥 설치 및 실행
+### 설치 및 실행
 
 ```bash
-# 1️⃣ 설치
+# 설치
 sudo ./setup_zombie_monitor.sh
 
-# 2️⃣ 실시간 모니터링 시작
+# 실시간 모니터링 시작
 sudo /opt/zombie_monitor/zombie_monitor.sh
 
-# 3️⃣ 제거 (필요시)
+# 제거 (필요시)
 sudo ./uninstall_zombie_monitor.sh
 ```
 
-### ⚡ 빠른 테스트
-
-```bash
-# 좀비 프로세스 생성 (테스트용)
-./create_test_zombies.sh
-
-# 모니터링 실행
-sudo /opt/zombie_monitor/zombie_monitor.sh
-
-# [M] 키로 수동 정리 테스트
-# [A] 키로 자동 정리 활성화
-```
-
-## ✨ 주요 기능
-
-<table>
-<tr>
-<td width="50%" style="padding: 20px; vertical-align: top;">
+## 주요 기능
 
 ### 🎯 실시간 모니터링
-- **2초 간격 자동 새로고침** - 지속적인 시스템 감시
-- **시각적 상태 표시** - 직관적인 상태 정보 제공
-- **시스템 정보 표시** - 로드 평균, 메모리 사용률 등
-- **안정적인 키 입력** - 논블로킹 키보드 처리
-
-</td>
-<td width="50%" style="padding: 20px; vertical-align: top;">
+- 2초 간격 자동 새로고침으로 지속적인 시스템 감시
+- 직관적인 상태 정보 제공
+- 시스템 정보 표시 (로드 평균, 메모리 사용률 등)
+- 논블로킹 키보드 처리
 
 ### 🤖 자동 정리
-- **감지 즉시 정리** - 좀비 프로세스 발견 시 즉시 처리
-- **7단계 정리 과정** - 체계적인 정리 프로세스
-- **시스템 레벨 처리** - PPID 0.0 좀비도 처리 가능
-- **스마트 정리** - 안전하고 효율적인 정리
-
-</td>
-</tr>
-<tr>
-<td width="50%" style="padding: 20px; vertical-align: top;">
+- 좀비 프로세스 발견 시 즉시 처리
+- 7단계 체계적인 정리 프로세스
+- 시스템 레벨 처리 (PPID 0.0 좀비도 처리 가능)
+- 안전하고 효율적인 정리
 
 ### 📊 통계 및 로깅
-- **정확한 세션 통계** - 감지/정리된 좀비 수 추적
-- **실시간 성공률 계산** - 정리 성공률 실시간 표시
-- **상세 로깅** - 모든 활동을 로그로 기록
-- **로그 로테이션** - 자동 로그 파일 관리
-
-</td>
-<td width="50%" style="padding: 20px; vertical-align: top;">
+- 감지/정리된 좀비 수 추적
+- 실시간 성공률 계산
+- 모든 활동을 로그로 기록
+- 자동 로그 파일 관리
 
 ### 🎮 인터랙티브 제어
-- **단축키 지원** - [A]자동정리, [M]수동정리, [S]통계, [Q]종료
-- **논블로킹 키 입력** - 모니터링 중에도 키 입력 가능
-- **도움말 시스템** - [H]키로 도움말 표시
-- **터미널 안전성** - 안전한 종료 및 재시작
-
-</td>
-</tr>
-</table>
+- 단축키 지원 ([A]자동정리, [M]수동정리, [S]통계, [Q]종료)
+- 모니터링 중에도 키 입력 가능
+- 내장 도움말 시스템
+- 안전한 종료 및 재시작
 
 ### 🔥 7단계 정리 과정
 
@@ -153,8 +108,16 @@ graph TD
     N -->|No| O[7단계: 절대 강제 정리]
     O --> P{성공?}
     P -->|Yes| D
-    P -->|No| Q[⚠️ 정리 실패 - 무시하고 계속]
+    P -->|No| Q[⚠️ 정리 실패 - 통계 기록]
 ```
+
+### v1.1 신기능
+
+- 향상된 통계 (정리 실패 수, 세션 시간 추가)
+- 자동 로그 로테이션 (10MB 초과 시 자동 로그 순환)
+- 성능 최적화 (ps 명령어 호출 최적화)
+- 데몬 모드 (백그라운드 실행 지원)
+- 버전 관리 (버전 정보 및 업데이트 날짜 추가)
 
 ## 📋 사용법
 
@@ -173,6 +136,12 @@ sudo /opt/zombie_monitor/zombie_monitor.sh -i 5
 # 상세 출력 모드
 sudo /opt/zombie_monitor/zombie_monitor.sh -v
 
+# 백그라운드 데몬 모드 (신기능!)
+sudo /opt/zombie_monitor/zombie_monitor.sh -d
+
+# 버전 정보 확인
+sudo /opt/zombie_monitor/zombie_monitor.sh --version
+
 # 도움말 표시
 sudo /opt/zombie_monitor/zombie_monitor.sh -h
 ```
@@ -180,7 +149,10 @@ sudo /opt/zombie_monitor/zombie_monitor.sh -h
 ### 고급 옵션
 
 ```bash
-# 백그라운드에서 실행
+# 데몬 모드로 백그라운드 실행 (v1.1 신기능!)
+sudo /opt/zombie_monitor/zombie_monitor.sh -d
+
+# 기존 방식 백그라운드 실행
 nohup sudo /opt/zombie_monitor/zombie_monitor.sh > /dev/null 2>&1 &
 
 # 서비스로 실행
@@ -194,6 +166,12 @@ sudo systemctl stop zombie-monitor
 
 # 서비스 재시작
 sudo systemctl restart zombie-monitor
+
+# 데몬 모드 + 자동 정리 비활성화
+sudo /opt/zombie_monitor/zombie_monitor.sh -d -m
+
+# 데몬 모드 + 5초 간격 + 상세 출력
+sudo /opt/zombie_monitor/zombie_monitor.sh -d -i 5 -v
 ```
 
 ### 🎮 실시간 모니터링 단축키
@@ -232,8 +210,10 @@ sudo systemctl restart zombie-monitor
 📈 세션 통계:
   감지된 좀비: 5개
   정리된 좀비: 3개
-  정리 성공률: 60%
-  세션 시작: 2025-09-27 18:40:30
+  정리 실패: 1개
+  정리 성공률: 75%
+  세션 시간: 0시간 2분 15초
+  세션 시작: 2025-09-30 18:40:30
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 실시간 모니터링 중... (2초마다 새로고침)
@@ -443,38 +423,19 @@ zombie-monitor/
 | **`uninstall_zombie_monitor.sh`** | 🗑️ 제거 스크립트 | 타임아웃 기능이 있는 완전 제거 스크립트 |
 | **`README.md`** | 📖 문서 | 최적화된 기능 설명, 사용법, 문제 해결 가이드 |
 
-## 📄 라이선스
+## 지원
 
-이 프로젝트는 MIT 라이선스 하에 배포됩니다.
+**작성자**: Tae-system  
+**버전**: 1.1  
+**최종 업데이트**: 2025-09-30
 
-## 🆘 지원
-
-<div align="center">
-
-### 📧 연락처
-
-| 플랫폼 | 링크 | 설명 |
-|--------|------|------|
-| 📧 **이메일** | [bhd03014@gmail.com](mailto:bhd03014@gmail.com) | 기술 지원 및 문의 |
-| 📸 **인스타그램** | [@tae_system](https://www.instagram.com/tae_system/) | 프로젝트 소식 |
-| 🐙 **GitHub** | [@xowk9876](https://github.com/xowk9876) | 소스 코드 및 이슈 |
-
-</div>
-
----
+### 📱 소셜 미디어
 
 <div align="center">
 
-**👨‍💻 작성자**: Tae-system  
-**📦 버전**: 1.0 (최적화 완료)  
-**📅 최종 업데이트**: 2025-09-27
-
----
-
-### ⭐ 이 프로젝트가 도움이 되었다면 Star를 눌러주세요!
-
-[![GitHub stars](https://img.shields.io/github/stars/xowk9876/zombie-monitor?style=social)](https://github.com/xowk9876/zombie-monitor)
-[![GitHub forks](https://img.shields.io/github/forks/xowk9876/zombie-monitor?style=social)](https://github.com/xowk9876/zombie-monitor)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tae-system)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/tae_system)
 
 </div>
+
 
