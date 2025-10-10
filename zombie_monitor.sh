@@ -1,8 +1,7 @@
 #!/bin/bash
-
-# Rocky Linux Zombie Process Monitor v1.1
+# Rocky Linux Zombie Process Monitor v1.2
 # 실시간 좀비 프로세스 모니터링 및 자동 정리
-# 작성자: Tae-system, 업데이트: 2025-01-27
+# 작성자: Tae-system, 업데이트: 2025-01-27 (최적화 버전)
 
 # 색상 정의
 RED='\033[0;31m'
@@ -19,7 +18,7 @@ LOCK_FILE="/tmp/zombie_monitor.lock"
 CONFIG_FILE="/etc/zombie_monitor.conf"
 
 # 기본 설정
-VERSION="1.1"
+VERSION="1.2"
 REFRESH_INTERVAL=2
 AUTO_CLEANUP=true
 VERBOSE=false
@@ -42,8 +41,11 @@ log_message() {
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     
     # 로그 파일 크기 체크 및 로테이션
-    if [ -f "$LOG_FILE" ] && [ $(stat -f%z "$LOG_FILE" 2>/dev/null || stat -c%s "$LOG_FILE" 2>/dev/null || echo 0) -gt $LOG_ROTATION_SIZE ]; then
-        rotate_log
+    if [ -f "$LOG_FILE" ]; then
+        local file_size=$(wc -c < "$LOG_FILE" 2>/dev/null || echo 0)
+        if [ "$file_size" -gt "$LOG_ROTATION_SIZE" ]; then
+            rotate_log
+        fi
     fi
     
     echo "[$timestamp] [$level] $message" >> "$LOG_FILE"
@@ -85,16 +87,38 @@ cleanup_lock() {
     rm -f "$LOCK_FILE"
 }
 
-# 좀비 프로세스 감지 (최적화된 버전)
-detect_zombies() {
+# 좀비 프로세스 정보 캐시 변수
+ZOMBIE_CACHE=""
+ZOMBIE_CACHE_TIME=0
+
+# 좀비 프로세스 정보 가져오기 (캐시 사용)
+get_zombie_info() {
+    local current_time=$(date +%s)
+    # 1초 이내면 캐시 사용
+    if [ $((current_time - ZOMBIE_CACHE_TIME)) -lt 1 ]; then
+        echo "$ZOMBIE_CACHE"
+        return
+    fi
+    
     # ps 명령어 최적화 - 필요한 컬럼만 출력
-    ps -eo pid,ppid,stat,comm --no-headers 2>/dev/null | awk '$3 ~ /^Z/ { print $1, $2, $4 }'
+    ZOMBIE_CACHE=$(ps -eo pid,ppid,stat,comm --no-headers 2>/dev/null | awk '$3 ~ /^Z/ { print $1, $2, $4 }')
+    ZOMBIE_CACHE_TIME=$current_time
+    echo "$ZOMBIE_CACHE"
 }
 
-# 좀비 프로세스 개수 (최적화된 버전)
+# 좀비 프로세스 감지
+detect_zombies() {
+    get_zombie_info
+}
+
+# 좀비 프로세스 개수
 count_zombies() {
-    # 더 빠른 카운팅 방법
-    ps -eo stat --no-headers 2>/dev/null | grep -c '^Z' || echo 0
+    local info=$(get_zombie_info)
+    if [ -z "$info" ]; then
+        echo 0
+    else
+        echo "$info" | wc -l
+    fi
 }
 
 # 좀비 프로세스 정리
@@ -175,18 +199,18 @@ cleanup_zombie() {
             return
         fi
         
-        # 6단계: 커널 레벨 정리 (매우 위험)
-        print_color $RED "  → 6단계: 커널 레벨 정리 (위험)"
-        echo 1 > /proc/sysrq-trigger 2>/dev/null
+        # 6단계: 추가 강제 정리
+        print_color $RED "  → 6단계: 추가 강제 정리"
+        pkill -9 -P 1 2>/dev/null
         sleep 1
         if ! kill -0 "$pid" 2>/dev/null; then
-            print_color $GREEN "✅ 커널 레벨 정리 완료"
-            log_message "SUCCESS" "Zombie $pid cleaned with kernel method"
+            print_color $GREEN "✅ 추가 강제 정리 완료"
+            log_message "SUCCESS" "Zombie $pid cleaned with additional force"
             ((TOTAL_CLEANED++))
             return
         fi
         
-        # 7단계: 절대 강제 정리
+        # 7단계: 최종 정리
         print_color $RED "  → 7단계: 절대 강제 정리"
         kill -9 "$pid" 2>/dev/null
         kill -9 -"$pid" 2>/dev/null
@@ -324,9 +348,9 @@ show_status() {
     # 좀비 프로세스 목록
     if [ $zombie_count -gt 0 ]; then
         print_color $YELLOW "📋 Zombie 프로세스 목록:"
-        ps aux | awk '$8 ~ /^Z/ { 
-            printf "  PID: %s, PPID: %s, CMD: %s\n", $2, $3, $11 
-        }'
+        detect_zombies | while read pid ppid cmd; do
+            printf "  PID: %s, PPID: %s, CMD: %s\n" "$pid" "$ppid" "$cmd"
+        done
         echo
     fi
     
